@@ -1,0 +1,1 @@
+var app = angular.module('tvet-app', ['ngRoute', 'ui.bootstrap']);
