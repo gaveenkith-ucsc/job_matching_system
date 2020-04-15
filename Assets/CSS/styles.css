@@ -19,3 +19,7 @@ body {
 .student-login-page-main-container .student-login-page-secondary-container .title-container .title {
     text-align: center;
 }
+
+.student-login-page-main-container .student-login-page-secondary-container .message-container .message {
+    color: red;
+}
