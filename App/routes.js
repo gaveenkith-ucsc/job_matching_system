@@ -8,6 +8,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/', {
             templateUrl: 'App/Views/Pages/LoginMenu.html'
         })
+        .when('/login', {
+            templateUrl: 'App/Views/Pages/StudentLogin.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
