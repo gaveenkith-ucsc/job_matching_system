@@ -1,0 +1,25 @@
+body {
+    background-image: url('/Assets/Images/bg.png');
+    background-repeat: repeat;
+}
+
+.login-menu-page-main-container .title-container .title {
+    text-align: center;
+}
+
+.login-menu-page-main-container .button-container {
+    text-align: center;
+}
+
+.login-menu-page-main-container .button-container button {
+    width: 400px;
+    margin-top: 60px;
+}
+
+.student-login-page-main-container .student-login-page-secondary-container .title-container .title {
+    text-align: center;
+}
+
+.student-login-page-main-container .student-login-page-secondary-container .message-container .message {
+    color: red;
+}
