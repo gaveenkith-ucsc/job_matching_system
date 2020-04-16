@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.student-login-page-main-container .student-login-page-secondary-container .message-container {
+    margin-bottom: 20px;
+}
+
 .student-login-page-main-container .student-login-page-secondary-container .message-container .message {
     color: red;
 }
