@@ -3,7 +3,7 @@
         <div class="row">
             <div class="student-login-page-secondary-container">
                 <div class="title-container">
-                    <h1 class="title">Student Account</h1>
+                    <h1 class="title">Job Seeker Account</h1>
                 </div>
                 <div class="login-signup-container clearfix">
                     <div class="col-md-6">
@@ -33,38 +33,53 @@
                         </div>
                         <div class="register-container">
                             <div class="field-container form-group">
-                                <label for="nic">NIC No:</label>
-                                <input type="text" class="form-control" id="nic">
+                                <label for="nic">NIC No (*):</label>
+                                <input type="text" class="form-control" id="nic" ng-model="nic_no">
                             </div>
                             <div class="field-container form-group">
-                                <label for="fname">First Name:</label>
-                                <input type="text" class="form-control" id="fname">
+                                <label for="fname">First Name (*):</label>
+                                <input type="text" class="form-control" id="fname" ng-model="fname">
                             </div>
                             <div class="field-container form-group">
-                                <label for="mname">Middle Name:</label>
-                                <input type="text" class="form-control" id="mname">
+                                <label for="mname">Middle Name (*):</label>
+                                <input type="text" class="form-control" id="mname" ng-model="mname">
                             </div>
                             <div class="field-container form-group">
-                                <label for="lname">Last Name:</label>
-                                <input type="text" class="form-control" id="lname">
+                                <label for="lname">Last Name (*):</label>
+                                <input type="text" class="form-control" id="lname" ng-model="lname">
                             </div>
                             <div class="field-container form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email">
+                                <label for="email">Email (*):</label>
+                                <input type="email" class="form-control" id="email" ng-model="email">
                             </div>
                             <div class="field-container form-group">
-                                <label for="register-username">Username:</label>
-                                <input type="text" class="form-control" id="register-username">
+                                <label for="status">Status (*):</label>
+                                <select ng-model="prop.value" ng-options="v for v in prop.values" id="status"
+                                        class="form-control"></select>
                             </div>
                             <div class="field-container form-group">
-                                <label for="register-password">Password:</label>
-                                <input type="password" class="form-control" id="register-password">
+                                <label for="register-username">Username (*):</label>
+                                <input type="text" class="form-control" id="register-username" ng-model="regusername">
+                            </div>
+                            <div class="field-container form-group">
+                                <label for="register-password">Password (*):</label>
+                                <input type="password" class="form-control" id="register-password"
+                                       ng-model="regpassword">
+                            </div>
+                            <div class="field-container form-group">
+                                <label for="register-confirm-password">Confirm Password (*):</label>
+                                <input type="password" class="form-control" id="register-confirm-password"
+                                       ng-model="confirmpassword">
                             </div>
                             <div class="button-container form-group">
-                                <button class="btn btn-primary register-btn">Register</button>
+                                <button class="btn btn-primary register-btn" ng-click="directToRegStep2();">Register
+                                </button>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="back-btn-container">
+                    <button class="btn btn-success register-btn" ng-click="directToMenu();">Back to login menu</button>
                 </div>
             </div>
         </div>

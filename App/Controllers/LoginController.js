@@ -3,6 +3,12 @@ app.controller('LoginController', function ($scope, $location, loginService) {
     $scope.message = "";
     $scope.username = "";
     $scope.password = "";
+    $scope.prop = {
+        "type": "select",
+        "name": "Service",
+        "value": "Select from here",
+        "values": ["Select from here", "Fresh", "Graduated"]
+    };
     $scope.login = function () {
         loginService.register($scope.username, $scope.password).then(function (obj) {
             console.log(obj);
@@ -30,5 +36,11 @@ app.controller('LoginController', function ($scope, $location, loginService) {
             $scope.message = "Please fill username and password.";
             $scope.message_status = true;
         }
+    }
+    $scope.directToMenu = function () {
+        $location.path("/");
+    }
+    $scope.directToRegStep2 = function () {
+        $location.path("/regstep2");
     }
 });

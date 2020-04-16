@@ -1,0 +1,50 @@
+<div class="student-reg-step2-main-container" ng-controller="StudentReg2Controller">
+    <div class="container">
+        <div class="row">
+            <div class="student-reg-step2-secondary-container clearfix">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="title-container">
+                        <h1 class="title">Profile Details</h1>
+                    </div>
+                    <div class="form-container">
+                        <div class="field-container form-group">
+                            <label for="add1">Address Line1:</label>
+                            <input type="text" class="form-control" id="add1" ng-model="add1">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="add2">Address Line2:</label>
+                            <input type="text" class="form-control" id="add2" ng-model="add2">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="add2">Address Line3:</label>
+                            <input type="text" class="form-control" id="add3" ng-model="add3">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="mobileno">Mobile No:</label>
+                            <input type="text" class="form-control" id="mobileno" ng-model="mobileno">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="date" class="form-control" id="dob" ng-model="dob">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="dob">Upload Profile Photo:</label>
+                            <input type="file" id="file" ng-click="$event = $event" ng-model="display" multiple
+                                   onchange="angular.element(this).scope().upload(event)"
+                                   accept="image/png, image/jpeg, image/gif"/>
+                        </div>
+                        <div class="field-container">
+                            <span ng-repeat='img in images'> <a href="#" ng-click="setImage($index)">
+                                <img ng-src="{{img}}"
+                                     alt="Generic placeholder thumbnail" style="max-height:100px;" class="thumbnail"/>
+                                </a>
+                              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

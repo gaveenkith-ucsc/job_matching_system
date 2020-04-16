@@ -27,3 +27,13 @@ body {
 .student-login-page-main-container .student-login-page-secondary-container .message-container .message {
     color: red;
 }
+
+.student-login-page-main-container .student-login-page-secondary-container .back-btn-container {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.student-reg-step2-main-container .student-reg-step2-secondary-container .title-container .title {
+    text-align: center;
+}
