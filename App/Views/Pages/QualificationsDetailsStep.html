@@ -1,0 +1,46 @@
+<div class="qualification-details-main-container" ng-controller="StudentReg3Controller">
+    <div class="container">
+        <div class="row">
+            <div class="qualification-details-secondary-container clearfix">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="title-container">
+                        <h1 class="title">Qualification Details</h1>
+                    </div>
+                    <div class="form-container">
+                        <div class="field-container form-group">
+                            <label for="category">Qualification Sector (*):</label>
+                            <select ng-model="sector.value" ng-options="v for v in sector.values" id="category"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="qtype">Qualification Type (*):</label>
+                            <select ng-model="qtype.value" ng-options="v for v in qtype.values" id="qtype"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="institute">Institute (*):</label>
+                            <input type="text" class="form-control" id="institute" ng-model="institute">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="certificateno">Certificate No (*):</label>
+                            <input type="text" class="form-control" id="certificateno" ng-model="certificateno">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="effdate">Effective Date (*):</label>
+                            <input type="date" class="form-control" id="effdate" ng-model="effdate">
+                        </div>
+                        <div class="add-button-container">
+                            <button class="btn btn-success add-list-btn">Add To List</button>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-primary next-btn" ng-click="next();">Next</button>
+                        <button class="btn btn-primary next-btn" ng-click="back();">Back</button>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>

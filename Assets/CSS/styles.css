@@ -37,3 +37,29 @@ body {
 .student-reg-step2-main-container .student-reg-step2-secondary-container .title-container .title {
     text-align: center;
 }
+
+.student-reg-step2-main-container .student-reg-step2-secondary-container .button-container {
+    text-align: center;
+}
+
+.student-reg-step2-main-container .student-reg-step2-secondary-container .button-container button {
+    margin-right: 25px;
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.qualification-details-main-container .qualification-details-secondary-container .title-container .title {
+    text-align: center;
+}
+
+.qualification-details-main-container .button-container {
+    text-align: center;
+}
+
+.qualification-details-main-container .button-container button {
+    margin-right: 25px;
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}

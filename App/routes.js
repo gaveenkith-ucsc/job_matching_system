@@ -14,6 +14,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/regstep2', {
             templateUrl: 'App/Views/Pages/StudentRegistrationStep2.html'
         })
+        .when('/regstep3', {
+            templateUrl: 'App/Views/Pages/QualificationsDetailsStep.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

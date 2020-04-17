@@ -25,11 +25,16 @@
                             <input type="text" class="form-control" id="mobileno" ng-model="mobileno">
                         </div>
                         <div class="field-container form-group">
-                            <label for="dob">Date of Birth:</label>
+                            <label for="dob">Date of Birth (*):</label>
                             <input type="date" class="form-control" id="dob" ng-model="dob">
                         </div>
                         <div class="field-container form-group">
-                            <label for="dob">Upload Profile Photo:</label>
+                            <label for="status">Gender (*):</label>
+                            <select ng-model="prop.value" ng-options="v for v in prop.values" id="status"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="dob">Upload Profile Photo (*):</label>
                             <input type="file" id="file" ng-click="$event = $event" ng-model="display" multiple
                                    onchange="angular.element(this).scope().upload(event)"
                                    accept="image/png, image/jpeg, image/gif"/>
@@ -41,6 +46,10 @@
                                 </a>
                               </span>
                         </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-primary next-btn" ng-click="next();">Next</button>
+                        <button class="btn btn-primary next-btn" ng-click="back();">Back</button>
                     </div>
                 </div>
                 <div class="col-md-2"></div>

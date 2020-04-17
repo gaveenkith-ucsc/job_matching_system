@@ -22,4 +22,16 @@ app.controller('StudentReg2Controller', function ($scope, $location) {
         }
         reader.readAsDataURL(file);
     }
+    $scope.back = function () {
+        $location.path("/login");
+    }
+    $scope.next = function () {
+        $location.path("/regstep3");
+    }
+    $scope.prop = {
+        "type": "select",
+        "name": "Service",
+        "value": "Select from here",
+        "values": ["Select from here", "Male", "Female"]
+    };
 });
