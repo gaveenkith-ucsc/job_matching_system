@@ -11,6 +11,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/login', {
             templateUrl: 'App/Views/Pages/StudentLogin.html'
         })
+        .when('/adminlogin', {
+            templateUrl: 'App/Views/Pages/AdminLogin.html'
+        })
         .when('/regstep2', {
             templateUrl: 'App/Views/Pages/StudentRegistrationStep2.html'
         })

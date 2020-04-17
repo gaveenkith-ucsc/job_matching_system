@@ -63,3 +63,15 @@ body {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+.admin-login-page-main-container .secondary-container .title-container .title {
+    text-align: center;
+}
+
+.admin-login-page-main-container .secondary-container .button-container {
+    text-align: center;
+}
+
+.admin-login-page-main-container .secondary-container .button-container {
+    width: 200px;
+}

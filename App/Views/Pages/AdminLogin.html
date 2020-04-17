@@ -1,0 +1,35 @@
+<div class="admin-login-page-main-container">
+    <div class="container">
+        <div class="row">
+            <div class="secondary-container">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="title-container">
+                        <h1 class="title">
+                            Admin Login
+                        </h1>
+                    </div>
+                    <div class="form-container">
+                        <div class="field-container form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" ng-model="username">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" ng-model="password">
+                        </div>
+                        <div class="message-container" ng-show="message_status">
+                            <span class="message">{{message}}</span>
+                        </div>
+                        <div class="button-container form-group">
+                            <button class="login-btn btn btn-primary" ng-click="checkLogin();">Login</button>
+                            <button class="login-btn btn btn-primary" ng-click="checkLogin();">Back To Login Menu
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
