@@ -72,6 +72,19 @@ body {
     text-align: center;
 }
 
-.admin-login-page-main-container .secondary-container .button-container {
+.admin-login-page-main-container .secondary-container .button-container button {
     width: 200px;
+}
+
+.admin-login-page-main-container .message-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.admin-login-page-main-container .message {
+    color: red;
+}
+
+.student-reg-step2-main-container textarea {
+    height: 100px;
 }

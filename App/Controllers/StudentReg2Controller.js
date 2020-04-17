@@ -1,4 +1,45 @@
-app.controller('StudentReg2Controller', function ($scope, $location) {
+app.controller('StudentReg2Controller', function ($scope, $location, $routeParams) {
+    $scope.nextbuttonvalue = "";
+    $scope.showadd1 = false;
+    $scope.showadd2 = false;
+    $scope.showadd3 = false;
+    $scope.showmobile = false;
+    $scope.showdob = false;
+    $scope.showgender = false;
+    $scope.showprofilephoto = false;
+    $scope.showexperience = false;
+    $scope.showaboutorganization = false;
+    $scope.user_type = $location.search().usertype;
+
+    if ($scope.user_type == "Job Seeker") {
+        $scope.showadd1 = true;
+        $scope.showadd2 = true;
+        $scope.showadd3 = true;
+        $scope.showmobile = true;
+        $scope.showdob = true;
+        $scope.showgender = true;
+        $scope.showprofilephoto = true;
+        $scope.nextbuttonvalue = "Next";
+    }
+    if ($scope.user_type == "Career Guidance Officer") {
+        $scope.showadd1 = true;
+        $scope.showadd2 = true;
+        $scope.showadd3 = true;
+        $scope.showmobile = true;
+        $scope.showdob = true;
+        $scope.showgender = true;
+        $scope.showprofilephoto = true;
+        $scope.showexperience = true;
+        $scope.nextbuttonvalue = "Submit";
+    }
+    if ($scope.user_type == "Employer") {
+        $scope.showadd1 = true;
+        $scope.showadd2 = true;
+        $scope.showadd3 = true;
+        $scope.showmobile = true;
+        $scope.showaboutorganization = true;
+        $scope.nextbuttonvalue = "Submit";
+    }
 
     $scope.name = "Select Files to Upload";
     $scope.images = [];
@@ -26,7 +67,12 @@ app.controller('StudentReg2Controller', function ($scope, $location) {
         $location.path("/login");
     }
     $scope.next = function () {
-        $location.path("/regstep3");
+        if ($scope.user_type == "Job Seeker") {
+            $location.path("/regstep3");
+        } else {
+            alert("ok");
+        }
+
     }
     $scope.prop = {
         "type": "select",
