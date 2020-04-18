@@ -27,15 +27,34 @@
                             <input type="text" class="form-control" id="certificateno" ng-model="certificateno">
                         </div>
                         <div class="field-container form-group">
-                            <label for="effdate">Effective Date (*):</label>
-                            <input type="date" class="form-control" id="effdate" ng-model="effdate">
+                            <label for="completedyear">Completed Year (*):</label>
+                            <input type="text" class="form-control" id="completedyear" ng-model="completedyear">
                         </div>
                         <div class="add-button-container">
-                            <button class="btn btn-success add-list-btn">Add To List</button>
+                            <button class="btn btn-success add-list-btn" ng-click="addQualification();">Add To List
+                            </button>
+                        </div>
+                        <div class="table-container">
+                            <table border="1" style="border-collapse: collapse;width: 100%;">
+                                <tr>
+                                    <th>Qualification Sector</th>
+                                    <th>Qualification Type</th>
+                                    <th>Institute</th>
+                                    <th>Certificate No/Village</th>
+                                    <th>Effective Date</th>
+                                </tr>
+                                <tr ng-repeat="qualification in qualifications">
+                                    <td>{{qualification.sector}}</td>
+                                    <td>{{qualification.type}}</td>
+                                    <td>{{qualification.institute}}</td>
+                                    <td>{{qualification.certificateno}}</td>
+                                    <td>{{qualification.completedyear}}</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div class="button-container">
-                        <button class="btn btn-primary next-btn" ng-click="next();">Next</button>
+                        <button class="btn btn-primary next-btn" ng-click="next();">Submit</button>
                         <button class="btn btn-primary next-btn" ng-click="back();">Back</button>
                     </div>
                 </div>

@@ -1,4 +1,5 @@
-app.controller('StudentReg3Controller', function ($scope, $location) {
+app.controller('StudentReg3Controller', function ($scope, $location, $filter) {
+
     $scope.sector = {
         "type": "select",
         "name": "Service",
@@ -15,11 +16,23 @@ app.controller('StudentReg3Controller', function ($scope, $location) {
         "value": "Select from here",
         "values": ["Select from here", "Higher Diploma", "Diploma", "Certificate"]
     };
+    $scope.qualifications = [];
 
+    $scope.addQualification = () => {
+        $scope.qualifications.push({
+            sector: $scope.sector.value,
+            type: $scope.qtype.value,
+            institute: $scope.institute,
+            certificateno: $scope.certificateno,
+            completedyear: $scope.completedyear
+        });
+
+        console.log($scope.qualifications);
+    }
     $scope.back = function () {
         $location.path("/regstep2");
     }
     $scope.next = function () {
-        $location.path("/regstep3");
+        $location.path("/endregistration");
     }
 });

@@ -88,3 +88,24 @@ body {
 .student-reg-step2-main-container textarea {
     height: 100px;
 }
+
+.qualification-details-main-container table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.end-registration-page .success-message {
+    color: green;
+    text-align: center;
+}
+
+.end-registration-page .error-message {
+    color: red;
+    text-align: center;
+}
+
+.end-registration-page .button-container {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}

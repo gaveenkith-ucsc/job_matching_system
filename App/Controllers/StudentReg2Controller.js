@@ -70,7 +70,7 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
         if ($scope.user_type == "Job Seeker") {
             $location.path("/regstep3");
         } else {
-            alert("ok");
+            $location.path("/endregistration");
         }
 
     }
