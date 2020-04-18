@@ -31,8 +31,11 @@
                             <input type="text" class="form-control" id="completedyear" ng-model="completedyear">
                         </div>
                         <div class="add-button-container">
-                            <button class="btn btn-success add-list-btn" ng-click="addQualification();">Add To List
+                            <button class="btn btn-success add-list-btn" ng-click="formValidation();">Add To List
                             </button>
+                        </div>
+                        <div class="error-msg-container" ng-show="showerrormsg">
+                            <span class="error-msg">{{errormsg}}</span>
                         </div>
                         <div class="table-container">
                             <table border="1" style="border-collapse: collapse;width: 100%;">
@@ -52,6 +55,9 @@
                                 </tr>
                             </table>
                         </div>
+                    </div>
+                    <div class="error-msg-container" ng-show="showerrormsg2">
+                        <span class="error-msg">{{errormsg2}}</span>
                     </div>
                     <div class="button-container">
                         <button class="btn btn-primary next-btn" ng-click="next();">Submit</button>

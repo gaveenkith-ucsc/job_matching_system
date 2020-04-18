@@ -1,5 +1,11 @@
 app.controller('StudentReg3Controller', function ($scope, $location, $filter) {
-
+    $scope.institute = "";
+    $scope.certificateno = "";
+    $scope.completedyear = "";
+    $scope.showerrormsg = false;
+    $scope.errormsg = "";
+    $scope.showerrormsg2 = false;
+    $scope.errormsg2 = "";
     $scope.sector = {
         "type": "select",
         "name": "Service",
@@ -33,6 +39,25 @@ app.controller('StudentReg3Controller', function ($scope, $location, $filter) {
         $location.path("/regstep2");
     }
     $scope.next = function () {
-        $location.path("/endregistration");
+        $scope.showerrormsg = false;
+        console.log($scope.qualifications);
+        if ($scope.qualifications.length > 0) {
+            $scope.showerrormsg2 = false;
+            $location.path("/endregistration");
+        } else {
+            $scope.showerrormsg2 = true;
+            $scope.errormsg2 = "Please add at least one qualification to the list.";
+        }
+
+    }
+    $scope.formValidation = function () {
+        $scope.showerrormsg2 = false;
+        if ($scope.institute.length == 0 || $scope.certificateno.length == 0 || $scope.completedyear.length == 0
+            || $scope.sector.value == "Select from here" || $scope.qtype.value == "Select from here") {
+            $scope.showerrormsg = true;
+            $scope.errormsg = "Please fill all required fields";
+        } else {
+            $scope.addQualification();
+        }
     }
 });

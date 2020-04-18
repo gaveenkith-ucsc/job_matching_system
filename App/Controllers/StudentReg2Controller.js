@@ -1,4 +1,15 @@
 app.controller('StudentReg2Controller', function ($scope, $location, $routeParams) {
+    $scope.showerrormsg = false;
+    $scope.errormsg = "";
+    $scope.add1 = "";
+    $scope.add2 = "";
+    $scope.add3 = "";
+    $scope.mobileno = "";
+    $scope.experience = "";
+    $scope.aboutorganization = "";
+    $scope.dob = "";
+    $scope.display = "";
+
     $scope.nextbuttonvalue = "";
     $scope.showadd1 = false;
     $scope.showadd2 = false;
@@ -66,12 +77,8 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
     $scope.back = function () {
         $location.path("/login");
     }
-    $scope.next = function () {
-        if ($scope.user_type == "Job Seeker") {
-            $location.path("/regstep3");
-        } else {
-            $location.path("/endregistration");
-        }
+    $scope.next = function (dobval) {
+        $location.path("/regstep3");
 
     }
     $scope.prop = {
@@ -80,4 +87,39 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
         "value": "Select from here",
         "values": ["Select from here", "Male", "Female"]
     };
+
+    $scope.formValidation = function (dob) {
+        if ($scope.user_type == "Employer") {
+            if ($scope.add1.length == 0 || $scope.add2.length == 0 || $scope.add3.length == 0 || $scope.mobileno.length == 0
+                || $scope.aboutorganization.length == 0) {
+                $scope.showerrormsg = true;
+                $scope.errormsg = "Please fill all required fields";
+            } else {
+                $scope.showerrormsg = false;
+                $location.path("/endregistration").search({usertype: $scope.user_type});
+            }
+        }
+        if ($scope.user_type == "Job Seeker") {
+            if ($scope.add1.length == 0 || $scope.add2.length == 0 || $scope.add3.length == 0 || $scope.mobileno.length == 0
+                || $scope.dob.length == 0 || $scope.prop.value == "Select from here" || !$scope.display) {
+                $scope.showerrormsg = true;
+                $scope.errormsg = "Please fill all required fields";
+            } else {
+                $scope.showerrormsg = false;
+                $scope.next(dob);
+            }
+        }
+        if ($scope.user_type == "Career Guidance Officer") {
+            if ($scope.add1.length == 0 || $scope.add2.length == 0 || $scope.add3.length == 0 || $scope.mobileno.length == 0
+                || $scope.dob.length == 0 || $scope.prop.value == "Select from here" || !$scope.display || $scope.experience.length == 0) {
+                $scope.showerrormsg = true;
+                $scope.errormsg = "Please fill all required fields";
+            } else {
+                $scope.showerrormsg = false;
+                $location.path("/endregistration").search({usertype: $scope.user_type});
+            }
+        }
+
+
+    }
 });

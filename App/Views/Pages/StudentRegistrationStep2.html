@@ -9,29 +9,29 @@
                     </div>
                     <div class="form-container">
                         <div class="field-container form-group" ng-show="showadd1">
-                            <label for="add1">Address Line1:</label>
+                            <label for="add1">Address Line1 (*):</label>
                             <input type="text" class="form-control" id="add1" ng-model="add1">
                         </div>
                         <div class="field-container form-group" ng-show="showadd2">
-                            <label for="add2">Address Line2:</label>
+                            <label for="add2">Address Line2 (*):</label>
                             <input type="text" class="form-control" id="add2" ng-model="add2">
                         </div>
                         <div class="field-container form-group" ng-show="showadd3">
-                            <label for="add2">Address Line3:</label>
+                            <label for="add2">Address Line3 (*):</label>
                             <input type="text" class="form-control" id="add3" ng-model="add3">
                         </div>
                         <div class="field-container form-group" ng-show="showmobile">
-                            <label for="mobileno">Mobile No:</label>
+                            <label for="mobileno">Mobile No (*):</label>
                             <input type="text" class="form-control" id="mobileno" ng-model="mobileno">
                         </div>
 
                         <div class="field-container form-group" ng-show="showexperience">
-                            <label for="experience">Description about experience:</label>
+                            <label for="experience">Description about experience (*):</label>
                             <textarea id="experience" ng-model="experience" class="form-control"></textarea>
                         </div>
 
                         <div class="field-container form-group" ng-show="showaboutorganization">
-                            <label for="about-organization">Description about organization:</label>
+                            <label for="about-organization">Description about organization (*):</label>
                             <textarea id="about-organization" ng-model="aboutorganization"
                                       class="form-control"></textarea>
                         </div>
@@ -40,6 +40,7 @@
                             <label for="dob">Date of Birth (*):</label>
                             <input type="date" class="form-control" id="dob" ng-model="dob">
                         </div>
+
                         <div class="field-container form-group" ng-show="showgender">
                             <label for="status">Gender (*):</label>
                             <select ng-model="prop.value" ng-options="v for v in prop.values" id="status"
@@ -58,9 +59,14 @@
                                 </a>
                               </span>
                         </div>
+                        <div class="error-msg-container" ng-show="showerrormsg">
+                            <span class="error-msg">{{errormsg}}</span>
+                        </div>
                     </div>
                     <div class="button-container">
-                        <button class="btn btn-primary next-btn" ng-click="next();">{{nextbuttonvalue}}</button>
+                        <button class="btn btn-primary next-btn" ng-click="formValidation(dob | date : 'yyyy-MM-dd');">
+                            {{nextbuttonvalue}}
+                        </button>
                         <button class="btn btn-primary next-btn" ng-click="back();">Back</button>
                     </div>
                 </div>

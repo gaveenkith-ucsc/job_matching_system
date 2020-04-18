@@ -109,3 +109,30 @@ body {
     margin-top: 45px;
     margin-bottom: 45px;
 }
+
+.student-login-page-main-container .reg-error-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.student-login-page-main-container .reg-error-container .reg-error-msg {
+    color: red;
+}
+
+.student-reg-step2-main-container .error-msg-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.student-reg-step2-main-container .error-msg-container .error-msg {
+    color: red;
+}
+
+.qualification-details-main-container .error-msg-container .error-msg {
+    color: red;
+}
+
+.qualification-details-main-container .error-msg-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -54,7 +54,7 @@
                             </div>
                             <div class="field-container form-group" ng-show="showemail">
                                 <label for="email">Email (*):</label>
-                                <input type="email" class="form-control" id="email" ng-model="email">
+                                <input type="text" class="form-control" id="email" ng-model="email">
                             </div>
                             <div class="field-container form-group" ng-show="showstatus">
                                 <label for="status">Status (*):</label>
@@ -75,8 +75,11 @@
                                 <input type="password" class="form-control" id="register-confirm-password"
                                        ng-model="confirmpassword">
                             </div>
+                            <div class="reg-error-container" ng-show="showregerror">
+                                <span class="reg-error-msg">{{regerrormsg}}</span>
+                            </div>
                             <div class="button-container form-group">
-                                <button class="btn btn-primary register-btn" ng-click="directToRegStep2();">Register
+                                <button class="btn btn-primary register-btn" ng-click="formValidation();">Register
                                 </button>
                             </div>
                         </div>
