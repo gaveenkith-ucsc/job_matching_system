@@ -11,6 +11,18 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/login', {
             templateUrl: 'App/Views/Pages/StudentLogin.html'
         })
+        .when('/adminlogin', {
+            templateUrl: 'App/Views/Pages/AdminLogin.html'
+        })
+        .when('/regstep2', {
+            templateUrl: 'App/Views/Pages/StudentRegistrationStep2.html'
+        })
+        .when('/regstep3', {
+            templateUrl: 'App/Views/Pages/QualificationsDetailsStep.html'
+        })
+        .when('/endregistration', {
+            templateUrl: 'App/Views/Pages/EndRegistration.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

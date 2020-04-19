@@ -27,3 +27,112 @@ body {
 .student-login-page-main-container .student-login-page-secondary-container .message-container .message {
     color: red;
 }
+
+.student-login-page-main-container .student-login-page-secondary-container .back-btn-container {
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.student-reg-step2-main-container .student-reg-step2-secondary-container .title-container .title {
+    text-align: center;
+}
+
+.student-reg-step2-main-container .student-reg-step2-secondary-container .button-container {
+    text-align: center;
+}
+
+.student-reg-step2-main-container .student-reg-step2-secondary-container .button-container button {
+    margin-right: 25px;
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.qualification-details-main-container .qualification-details-secondary-container .title-container .title {
+    text-align: center;
+}
+
+.qualification-details-main-container .button-container {
+    text-align: center;
+}
+
+.qualification-details-main-container .button-container button {
+    margin-right: 25px;
+    width: 150px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.admin-login-page-main-container .secondary-container .title-container .title {
+    text-align: center;
+}
+
+.admin-login-page-main-container .secondary-container .button-container {
+    text-align: center;
+}
+
+.admin-login-page-main-container .secondary-container .button-container button {
+    width: 200px;
+}
+
+.admin-login-page-main-container .message-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.admin-login-page-main-container .message {
+    color: red;
+}
+
+.student-reg-step2-main-container textarea {
+    height: 100px;
+}
+
+.qualification-details-main-container table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.end-registration-page .success-message {
+    color: green;
+    text-align: center;
+}
+
+.end-registration-page .error-message {
+    color: red;
+    text-align: center;
+}
+
+.end-registration-page .button-container {
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.student-login-page-main-container .reg-error-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.student-login-page-main-container .reg-error-container .reg-error-msg {
+    color: red;
+}
+
+.student-reg-step2-main-container .error-msg-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.student-reg-step2-main-container .error-msg-container .error-msg {
+    color: red;
+}
+
+.qualification-details-main-container .error-msg-container .error-msg {
+    color: red;
+}
+
+.qualification-details-main-container .error-msg-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

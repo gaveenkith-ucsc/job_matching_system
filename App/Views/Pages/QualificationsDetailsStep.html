@@ -1,0 +1,71 @@
+<div class="qualification-details-main-container" ng-controller="StudentReg3Controller">
+    <div class="container">
+        <div class="row">
+            <div class="qualification-details-secondary-container clearfix">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="title-container">
+                        <h1 class="title">Qualification Details</h1>
+                    </div>
+                    <div class="form-container">
+                        <div class="field-container form-group">
+                            <label for="category">Qualification Sector (*):</label>
+                            <select ng-model="sector.value" ng-options="v for v in sector.values" id="category"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="qtype">Qualification Type (*):</label>
+                            <select ng-model="qtype.value" ng-options="v for v in qtype.values" id="qtype"
+                                    class="form-control"></select>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="institute">Institute (*):</label>
+                            <input type="text" class="form-control" id="institute" ng-model="institute">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="certificateno">Certificate No (*):</label>
+                            <input type="text" class="form-control" id="certificateno" ng-model="certificateno">
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="completedyear">Completed Year (*):</label>
+                            <input type="text" class="form-control" id="completedyear" ng-model="completedyear">
+                        </div>
+                        <div class="add-button-container">
+                            <button class="btn btn-success add-list-btn" ng-click="formValidation();">Add To List
+                            </button>
+                        </div>
+                        <div class="error-msg-container" ng-show="showerrormsg">
+                            <span class="error-msg">{{errormsg}}</span>
+                        </div>
+                        <div class="table-container">
+                            <table border="1" style="border-collapse: collapse;width: 100%;">
+                                <tr>
+                                    <th>Qualification Sector</th>
+                                    <th>Qualification Type</th>
+                                    <th>Institute</th>
+                                    <th>Certificate No/Village</th>
+                                    <th>Effective Date</th>
+                                </tr>
+                                <tr ng-repeat="qualification in qualifications">
+                                    <td>{{qualification.sector}}</td>
+                                    <td>{{qualification.type}}</td>
+                                    <td>{{qualification.institute}}</td>
+                                    <td>{{qualification.certificateno}}</td>
+                                    <td>{{qualification.completedyear}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="error-msg-container" ng-show="showerrormsg2">
+                        <span class="error-msg">{{errormsg2}}</span>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-primary next-btn" ng-click="next();">Submit</button>
+                        <button class="btn btn-primary next-btn" ng-click="back();">Back</button>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
