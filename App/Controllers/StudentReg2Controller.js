@@ -1,4 +1,4 @@
-app.controller('StudentReg2Controller', function ($scope, $location, $routeParams) {
+app.controller('StudentReg2Controller', function ($scope, $location, $routeParams, registrationSessionService) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
     $scope.add1 = "";
@@ -78,8 +78,11 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
         $location.path("/login");
     }
     $scope.next = function (dobval) {
-        $location.path("/regstep3");
-
+        if (registrationSessionService.status == 'Fresh') {
+            $location.path("/endregistration").search({usertype: $scope.user_type});
+        } else {
+            $location.path("/regstep3");
+        }
     }
     $scope.prop = {
         "type": "select",
@@ -95,6 +98,8 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
                 $scope.showerrormsg = true;
                 $scope.errormsg = "Please fill all required fields";
             } else {
+                registrationSessionService.employerStep2($scope.add1, $scope.add2, $scope.add3, $scope.mobileno, $scope.aboutorganization);
+                registrationSessionService.viewEmployerStep2();
                 $scope.showerrormsg = false;
                 $location.path("/endregistration").search({usertype: $scope.user_type});
             }
@@ -105,6 +110,8 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
                 $scope.showerrormsg = true;
                 $scope.errormsg = "Please fill all required fields";
             } else {
+                registrationSessionService.seekerStep2($scope.add1, $scope.add2, $scope.add3, $scope.mobileno, dob, $scope.prop.value, $scope.display);
+                registrationSessionService.viewSeekerStep2();
                 $scope.showerrormsg = false;
                 $scope.next(dob);
             }
@@ -115,6 +122,8 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
                 $scope.showerrormsg = true;
                 $scope.errormsg = "Please fill all required fields";
             } else {
+                registrationSessionService.guidanceStep2($scope.add1, $scope.add2, $scope.add3, $scope.mobileno, $scope.experience, dob, $scope.prop.value, $scope.display);
+                registrationSessionService.viewGuidanceStep2();
                 $scope.showerrormsg = false;
                 $location.path("/endregistration").search({usertype: $scope.user_type});
             }

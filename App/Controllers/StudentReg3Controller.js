@@ -1,4 +1,4 @@
-app.controller('StudentReg3Controller', function ($scope, $location, $filter) {
+app.controller('StudentReg3Controller', function ($scope, $location, $filter, registrationSessionService) {
     $scope.institute = "";
     $scope.certificateno = "";
     $scope.completedyear = "";
@@ -40,8 +40,9 @@ app.controller('StudentReg3Controller', function ($scope, $location, $filter) {
     }
     $scope.next = function () {
         $scope.showerrormsg = false;
-        console.log($scope.qualifications);
         if ($scope.qualifications.length > 0) {
+            registrationSessionService.seekerStep3($scope.qualifications);
+            registrationSessionService.viewSeekerStep3();
             $scope.showerrormsg2 = false;
             $location.path("/endregistration");
         } else {
