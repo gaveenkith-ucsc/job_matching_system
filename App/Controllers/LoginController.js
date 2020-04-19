@@ -1,4 +1,4 @@
-app.controller('LoginController', function ($scope, $location, loginService, $routeParams, registrationSessionService) {
+app.controller('LoginController', function ($scope, $location, loginService, $routeParams, registrationSessionService, registrationValidationService) {
     $scope.message_status = false;
     $scope.showregerror = false;
     $scope.regerrormsg = "";
@@ -119,10 +119,25 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                         $scope.regerrormsg = "Password and confirm password are not matched.";
                     } else {
                         $scope.showregerror = false;
-                        registrationSessionService.seekerStep1($scope.nic_no, $scope.fname, $scope.mname, $scope.lname,
-                            $scope.email, $scope.prop.value, $scope.regusername, $scope.regpassword);
-                        registrationSessionService.viewSeekerStep1();
-                        $location.path("/regstep2").search({usertype: $scope.user_type});
+                        registrationValidationService.validateSeekerOfficer($scope.nic_no).then(function (obj) {
+                            if (parseInt(obj.data.records[0].count) > 0) {
+                                $scope.showregerror = true;
+                                $scope.regerrormsg = "Nic No is already exists in the system.";
+                            } else {
+                                registrationValidationService.validateUsername($scope.regusername).then(function (obj) {
+                                    if (parseInt(obj.data.records[0].count) > 0) {
+                                        $scope.showregerror = true;
+                                        $scope.regerrormsg = "Username is already exists in the system.";
+                                    } else {
+                                        $scope.showregerror = false;
+                                        registrationSessionService.seekerStep1($scope.nic_no, $scope.fname, $scope.mname, $scope.lname,
+                                            $scope.email, $scope.prop.value, $scope.regusername, $scope.regpassword);
+                                        registrationSessionService.viewSeekerStep1();
+                                        $location.path("/regstep2").search({usertype: $scope.user_type});
+                                    }
+                                });
+                            }
+                        });
                     }
                 }
 
@@ -148,9 +163,24 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                         $scope.regerrormsg = "password and confirm passwords are not matched.";
                     } else {
                         $scope.showregerror = false;
-                        registrationSessionService.employerStep1($scope.oname, $scope.email, $scope.regusername, $scope.regpassword);
-                        registrationSessionService.viewEmployerStep1();
-                        $location.path("/regstep2").search({usertype: $scope.user_type});
+                        registrationValidationService.validateEmployer($scope.oname).then(function (obj) {
+                            if (parseInt(obj.data.records[0].count) > 0) {
+                                $scope.showregerror = true;
+                                $scope.regerrormsg = "Organization name is already exists in the system.";
+                            } else {
+                                registrationValidationService.validateUsername($scope.regusername).then(function (obj) {
+                                    if (parseInt(obj.data.records[0].count) > 0) {
+                                        $scope.showregerror = true;
+                                        $scope.regerrormsg = "Username is already exists in the system.";
+                                    } else {
+                                        $scope.showregerror = false;
+                                        registrationSessionService.employerStep1($scope.oname, $scope.email, $scope.regusername, $scope.regpassword);
+                                        registrationSessionService.viewEmployerStep1();
+                                        $location.path("/regstep2").search({usertype: $scope.user_type});
+                                    }
+                                });
+                            }
+                        });
                     }
                 }
 
@@ -176,10 +206,27 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                         $scope.regerrormsg = "password and confirm passwords are not matched.";
                     } else {
                         $scope.showregerror = false;
-                        registrationSessionService.guidanceStep1($scope.nic_no, $scope.fname, $scope.mname, $scope.lname, $scope.email,
-                            $scope.regusername, $scope.regpassword);
-                        registrationSessionService.viewGuidanceStep1();
-                        $location.path("/regstep2").search({usertype: $scope.user_type});
+                        registrationValidationService.validateSeekerOfficer($scope.nic_no).then(function (obj) {
+                            if (parseInt(obj.data.records[0].count) > 0) {
+                                $scope.showregerror = true;
+                                $scope.regerrormsg = "Nic No is already exists in the system.";
+                            } else {
+                                registrationValidationService.validateUsername($scope.regusername).then(function (obj) {
+                                    if (parseInt(obj.data.records[0].count) > 0) {
+                                        $scope.showregerror = true;
+                                        $scope.regerrormsg = "Username is already exists in the system.";
+                                    } else {
+                                        $scope.showregerror = false;
+                                        registrationSessionService.guidanceStep1($scope.nic_no, $scope.fname, $scope.mname, $scope.lname, $scope.email,
+                                            $scope.regusername, $scope.regpassword);
+                                        registrationSessionService.viewGuidanceStep1();
+                                        $location.path("/regstep2").search({usertype: $scope.user_type});
+                                    }
+                                });
+                            }
+                        });
+
+
                     }
                 }
 
