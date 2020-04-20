@@ -2,10 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="message-container">
-                <h1 class="success-message">Your registration request has been sent to the system admin for the
-                    approval.</h1>
-                <h1 class="error-message">Something went wrong. Please try again.</h1>
-                <h1 class="success-message">Your registration has been successfull.</h1>
+                <h1 class="error-message" ng-show="showError">Something went wrong. Please try again.</h1>
+                <h1 class="success-message" ng-show="showSuccess">Your registration has been successfull.</h1>
             </div>
             <div class="button-container">
                 <button class="btn btn-primary" ng-click="back();">Back to login menu</button>

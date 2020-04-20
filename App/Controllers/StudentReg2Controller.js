@@ -1,4 +1,4 @@
-app.controller('StudentReg2Controller', function ($scope, $location, $routeParams, registrationSessionService) {
+app.controller('StudentReg2Controller', function ($scope, $location, $routeParams, registrationSessionService, registrationUpdateService) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
     $scope.add1 = "";
@@ -30,7 +30,11 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
         $scope.showdob = true;
         $scope.showgender = true;
         $scope.showprofilephoto = true;
-        $scope.nextbuttonvalue = "Next";
+        if (registrationSessionService.status != 'Fresh') {
+            $scope.nextbuttonvalue = "Next";
+        } else {
+            $scope.nextbuttonvalue = "Submit";
+        }
     }
     if ($scope.user_type == "Career Guidance Officer") {
         $scope.showadd1 = true;
@@ -79,7 +83,14 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
     }
     $scope.next = function (dobval) {
         if (registrationSessionService.status == 'Fresh') {
-            $location.path("/endregistration").search({usertype: $scope.user_type});
+            registrationUpdateService.addFreshSeeker().then(function (obj) {
+                console.log(obj);
+                if (obj.data.records[0].status == 'ok') {
+                    $location.path("/endregistration").search({usertype: $scope.user_type, status: 'success'});
+                } else {
+                    $location.path("/endregistration").search({usertype: $scope.user_type, status: 'fail'});
+                }
+            });
         } else {
             $location.path("/regstep3");
         }
@@ -101,7 +112,16 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
                 registrationSessionService.employerStep2($scope.add1, $scope.add2, $scope.add3, $scope.mobileno, $scope.aboutorganization);
                 registrationSessionService.viewEmployerStep2();
                 $scope.showerrormsg = false;
-                $location.path("/endregistration").search({usertype: $scope.user_type});
+                registrationUpdateService.addEmployer().then(function (obj) {
+                    console.log(obj);
+                    if (obj.data.records[0].status == 'ok') {
+                        $location.path("/endregistration").search({usertype: $scope.user_type, status: 'success'});
+                    } else {
+                        $location.path("/endregistration").search({usertype: $scope.user_type, status: 'fail'});
+                    }
+
+                });
+
             }
         }
         if ($scope.user_type == "Job Seeker") {
@@ -125,7 +145,14 @@ app.controller('StudentReg2Controller', function ($scope, $location, $routeParam
                 registrationSessionService.guidanceStep2($scope.add1, $scope.add2, $scope.add3, $scope.mobileno, $scope.experience, dob, $scope.prop.value, $scope.display);
                 registrationSessionService.viewGuidanceStep2();
                 $scope.showerrormsg = false;
-                $location.path("/endregistration").search({usertype: $scope.user_type});
+                registrationUpdateService.addGuidanceOfficer().then(function (obj) {
+                    console.log(obj);
+                    if (obj.data.records[0].status == 'ok') {
+                        $location.path("/endregistration").search({usertype: $scope.user_type, status: 'success'});
+                    } else {
+                        $location.path("/endregistration").search({usertype: $scope.user_type, status: 'fail'});
+                    }
+                });
             }
         }
 

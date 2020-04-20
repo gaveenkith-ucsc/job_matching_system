@@ -1,4 +1,4 @@
-app.controller('StudentReg3Controller', function ($scope, $location, $filter, registrationSessionService) {
+app.controller('StudentReg3Controller', function ($scope, $location, $filter, registrationSessionService, registrationUpdateService) {
     $scope.institute = "";
     $scope.certificateno = "";
     $scope.completedyear = "";
@@ -6,6 +6,7 @@ app.controller('StudentReg3Controller', function ($scope, $location, $filter, re
     $scope.errormsg = "";
     $scope.showerrormsg2 = false;
     $scope.errormsg2 = "";
+    $scope.flag = "";
     $scope.sector = {
         "type": "select",
         "name": "Service",
@@ -44,7 +45,29 @@ app.controller('StudentReg3Controller', function ($scope, $location, $filter, re
             registrationSessionService.seekerStep3($scope.qualifications);
             registrationSessionService.viewSeekerStep3();
             $scope.showerrormsg2 = false;
-            $location.path("/endregistration");
+            registrationUpdateService.addGraduateSeeker().then(function (obj) {
+                if (obj.data.records[0].status == "ok") {
+                    for (i = 0; i < $scope.qualifications.length; ++i) {
+                        registrationUpdateService.addQualification(registrationSessionService.nic_no, $scope.qualifications[i].sector,
+                            $scope.qualifications[i].type, $scope.qualifications[i].institute, $scope.qualifications[i].certificateno,
+                            $scope.qualifications[i].completedyear).then(function (obj) {
+                            if (obj.data.records[0].status == "ok") {
+                                $scope.flag = obj.data.records[0].status;
+                            } else {
+                                $scope.flag = obj.data.records[0].status;
+                            }
+
+                        });
+                    }
+                    $location.path("/endregistration").search({usertype: 'Job Seeker', status: 'success'});
+                }
+                //$location.path("/endregistration");
+                //if (obj.data.records[0].status == "ok") {
+                // $location.path("/endregistration").search({usertype: 'Job Seeker', status: 'success'});
+                //} else {
+                //  $location.path("/endregistration").search({usertype: 'Job Seeker', status: 'fail'});
+                //}
+            });
         } else {
             $scope.showerrormsg2 = true;
             $scope.errormsg2 = "Please add at least one qualification to the list.";
