@@ -1,4 +1,4 @@
-app.controller('LoginController', function ($scope, $location, loginService, $routeParams, registrationSessionService, registrationValidationService) {
+app.controller('LoginController', function ($scope, $location, loginService, $routeParams, registrationSessionService, registrationValidationService, loginSessionService) {
     $scope.message_status = false;
     $scope.showregerror = false;
     $scope.regerrormsg = "";
@@ -83,6 +83,13 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                     } else {
                         $scope.message = "";
                         $scope.message_status = false;
+                        console.log(obj);
+                        loginSessionService.addSessionDetails(obj.data.records[0].username, obj.data.records[0].user_type,
+                            obj.data.records[0].user_index, obj.data.records[0].user_status);
+                        if ($scope.user_type == 'Employer' && loginSessionService.user_type == 'Employer') {
+                            $location.path("/editemployerprofile");
+                        }
+
                     }
                 }
             });

@@ -1,1 +1,1 @@
-var app = angular.module('tvet-app', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('tvet-app', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngSanitize']);

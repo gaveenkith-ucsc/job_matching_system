@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 $user = json_decode(file_get_contents("php://input"));
 
 $username = $user->username;
-$password = $user->password;
+$password = $user->currentpassword;
 $hash_password = hash("sha512", $password);
 
 $conn = new mysqli("localhost", "root", "", "jobsmanagement");
@@ -20,10 +20,9 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
         $verified = "no";
     }
     $outp .= '{"username":"' . $rs["username"] . '",';
-    $outp .= '"status":"' . $verified . '",';
     $outp .= '"user_type":"' . $rs["user_type"] . '",';
     $outp .= '"user_index":"' . $rs["user_index"] . '",';
-    $outp .= '"user_status":"' . $rs["user_status"] . '",';
+    $outp .= '"status":"' . $verified . '",';
     $outp .= '"password":"' . $rs["password"] . '"}';
 }
 $outp = '{"records":[' . $outp . ']}';

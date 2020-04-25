@@ -23,6 +23,12 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/endregistration', {
             templateUrl: 'App/Views/Pages/EndRegistration.html'
         })
+        .when('/editemployerprofile', {
+            templateUrl: 'App/Views/Pages/EmployerProfile.html'
+        })
+        .when('/changeemployerpassword', {
+            templateUrl: 'App/Views/Pages/ChangeEmployerPassword.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
