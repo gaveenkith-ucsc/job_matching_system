@@ -29,6 +29,19 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/changeemployerpassword', {
             templateUrl: 'App/Views/Pages/ChangeEmployerPassword.html'
         })
+        .when('/editfreshseekerprofile', {
+            templateUrl: 'App/Views/Pages/EditFreshSeekerProfile.html'
+        })
+        .when('/editgraduateseekerprofile', {
+            templateUrl: 'App/Views/Pages/EditGraduateSeekerProfile.html'
+        })
+        .when('/editguidanceprofile', {
+            templateUrl: 'App/Views/Pages/EditGuidanceProfile.html'
+        })
+        .when('/editadminprofile', {
+            templateUrl: 'App/Views/Pages/EditAdminProfile.html'
+        })
+
         .otherwise({
             redirectTo: '/'
         });

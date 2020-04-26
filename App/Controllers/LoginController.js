@@ -88,6 +88,16 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                             obj.data.records[0].user_index, obj.data.records[0].user_status);
                         if ($scope.user_type == 'Employer' && loginSessionService.user_type == 'Employer') {
                             $location.path("/editemployerprofile");
+                        } else if ($scope.user_type == 'Career Guidance Officer' && loginSessionService.user_type == 'guidance') {
+                            $location.path("/editguidanceprofile");
+                        } else if ($scope.user_type == 'Job Seeker' && loginSessionService.user_type == 'seeker-graduate') {
+                            $location.path("/editgraduateseekerprofile");
+                        } else if ($scope.user_type == 'Job Seeker' && loginSessionService.user_type == 'seeker-fresh') {
+                            $location.path("/editfreshseekerprofile");
+                        }
+                        else {
+                            $scope.message = "Credentials failed. Please try again.";
+                            $scope.message_status = true;
                         }
 
                     }

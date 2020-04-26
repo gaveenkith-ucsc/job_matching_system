@@ -8,7 +8,7 @@ $password = $user->password;
 $hash_password = hash("sha512", $password);
 
 $conn = new mysqli("localhost", "root", "", "jobsmanagement");
-$result = $conn->query("select * from login where username='$username'");
+$result = $conn->query("select * from login where username='$username' and user_status='1'");
 $outp = "";
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {
