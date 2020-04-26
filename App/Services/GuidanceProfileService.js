@@ -54,6 +54,27 @@ app.service('guidanceProfileService', function ($http, loginSessionService) {
             url: 'App/Backend/User/updatePasswordApi.php'
         });
     }
+    this.getPhoto = function () {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'nic_no': loginSessionService.user_index
+            },
+            url: 'App/Backend/User/getGuidancePhotoApi.php'
+        });
+    }
 
+    this.savePhoto = function (photo) {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'nic_no': loginSessionService.user_index,
+                'image': photo
+            },
+            url: 'App/Backend/User/saveGuidancePhotoApi.php'
+        });
+    }
 
 });

@@ -29,6 +29,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/changeemployerpassword', {
             templateUrl: 'App/Views/Pages/ChangeEmployerPassword.html'
         })
+        .when('/changeguidancepassword', {
+            templateUrl: 'App/Views/Pages/ChangeGuidancePassword.html'
+        })
         .when('/editfreshseekerprofile', {
             templateUrl: 'App/Views/Pages/EditFreshSeekerProfile.html'
         })
@@ -41,7 +44,10 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/editadminprofile', {
             templateUrl: 'App/Views/Pages/EditAdminProfile.html'
         })
-
+        .when('/changeguidancephoto', {
+            controller: 'editGuidancePhotoController',
+            templateUrl: 'App/Views/Pages/ChangeGuidancePhoto.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
