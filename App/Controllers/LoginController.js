@@ -1,4 +1,4 @@
-app.controller('LoginController', function ($scope, $location, loginService, $routeParams, registrationSessionService, registrationValidationService) {
+app.controller('LoginController', function ($scope, $location, loginService, $routeParams, registrationSessionService, registrationValidationService, loginSessionService) {
     $scope.message_status = false;
     $scope.showregerror = false;
     $scope.regerrormsg = "";
@@ -83,6 +83,23 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                     } else {
                         $scope.message = "";
                         $scope.message_status = false;
+                        console.log(obj);
+                        loginSessionService.addSessionDetails(obj.data.records[0].username, obj.data.records[0].user_type,
+                            obj.data.records[0].user_index, obj.data.records[0].user_status);
+                        if ($scope.user_type == 'Employer' && loginSessionService.user_type == 'Employer') {
+                            $location.path("/editemployerprofile");
+                        } else if ($scope.user_type == 'Career Guidance Officer' && loginSessionService.user_type == 'guidance') {
+                            $location.path("/editguidanceprofile");
+                        } else if ($scope.user_type == 'Job Seeker' && loginSessionService.user_type == 'seeker-graduate') {
+                            $location.path("/editgraduateseekerprofile");
+                        } else if ($scope.user_type == 'Job Seeker' && loginSessionService.user_type == 'seeker-fresh') {
+                            $location.path("/editgraduateseekerprofile");
+                        }
+                        else {
+                            $scope.message = "Credentials failed. Please try again.";
+                            $scope.message_status = true;
+                        }
+
                     }
                 }
             });

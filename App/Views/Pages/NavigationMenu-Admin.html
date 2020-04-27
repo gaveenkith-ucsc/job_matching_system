@@ -1,0 +1,19 @@
+<div ng-controller="collapseDemoCtrlAdmin" style="padding-top: 40px;">
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedProfile = !isCollapsedProfile">
+        Admin Profile
+    </button>
+    <div uib-collapse="isCollapsedProfile" class="nav-menu-secondary-item" ng-click="changePassword();">
+        <div class="well well-lg">Change Password</div>
+    </div>
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedVideo = !isCollapsedVideo">
+       Video Gallery
+    </button>
+    <div uib-collapse="isCollapsedVideo" class="nav-menu-secondary-item" ng-click="addVideo();">
+        <div class="well well-lg">Add Video</div>
+    </div>
+    <div uib-collapse="isCollapsedVideo" class="nav-menu-secondary-item" ng-click="addVideo();">
+        <div class="well well-lg">View,Delete,Update Video</div>
+    </div>
+</div>

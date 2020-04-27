@@ -1,4 +1,4 @@
-app.controller('AdminLoginController', function ($scope, $location, loginService) {
+app.controller('AdminLoginController', function ($scope, $location, loginService, loginSessionService) {
     $scope.username = "";
     $scope.password = "";
     $scope.checkLogin = function () {
@@ -15,6 +15,14 @@ app.controller('AdminLoginController', function ($scope, $location, loginService
                     } else {
                         $scope.message = "";
                         $scope.message_status = false;
+                        if (obj.data.records[0].user_type == "admin") {
+                            loginSessionService.addSessionDetails(obj.data.records[0].username, obj.data.records[0].user_type,
+                                obj.data.records[0].user_index, obj.data.records[0].user_status);
+                            $location.path("/editadminprofile");
+                        } else {
+                            $scope.message = "Credentials failed. Please try again.";
+                            $scope.message_status = true;
+                        }
                     }
                 }
             });

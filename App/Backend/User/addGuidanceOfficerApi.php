@@ -28,7 +28,7 @@ $conn = new mysqli("localhost", "root", "", "jobsmanagement");
 
 $result = $conn->query("insert into guidanceofficer (nic_no,fname,mname,lname,email,experience,add1,add2,add3,mobileno,dob,gender,profile_photo) values('$nic_no','$fname','$mname','$lname',
                       '$email','$experience','$add1','$add2','$add3','$mobileno','$dob','$gender','$img_location')");
-$result2 = $conn->query("insert into login (username,password) values('$username','$password')");
+$result2 = $conn->query("insert into login (username,password,user_type,user_index,user_status) values('$username','$password','guidance','$nic_no','1')");
 $outp = "";
 if ($result && $result2) {
     $status = "ok";

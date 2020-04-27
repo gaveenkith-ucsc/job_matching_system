@@ -23,6 +23,40 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/endregistration', {
             templateUrl: 'App/Views/Pages/EndRegistration.html'
         })
+        .when('/editemployerprofile', {
+            templateUrl: 'App/Views/Pages/EmployerProfile.html'
+        })
+        .when('/changeemployerpassword', {
+            templateUrl: 'App/Views/Pages/ChangeEmployerPassword.html'
+        })
+        .when('/changeguidancepassword', {
+            templateUrl: 'App/Views/Pages/ChangeGuidancePassword.html'
+        })
+        .when('/changeseekerpassword', {
+            templateUrl: 'App/Views/Pages/ChangeSeekerPassword.html'
+        })
+        .when('/editfreshseekerprofile', {
+            templateUrl: 'App/Views/Pages/EditFreshSeekerProfile.html'
+        })
+        .when('/editgraduateseekerprofile', {
+            templateUrl: 'App/Views/Pages/EditGraduateSeekerProfile.html'
+        })
+        .when('/editguidanceprofile', {
+            templateUrl: 'App/Views/Pages/EditGuidanceProfile.html'
+        })
+        .when('/editadminprofile', {
+            templateUrl: 'App/Views/Pages/ChangeAdminPassword.html'
+        })
+        .when('/changeguidancephoto', {
+            controller: 'editGuidancePhotoController',
+            templateUrl: 'App/Views/Pages/ChangeGuidancePhoto.html'
+        })
+        .when('/changeseekerphoto', {
+            templateUrl: 'App/Views/Pages/ChangeSeekerPhoto.html'
+        })
+        .when('/viewqualification', {
+            templateUrl: 'App/Views/Pages/ViewQualifications.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

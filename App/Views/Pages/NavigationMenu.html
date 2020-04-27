@@ -1,0 +1,12 @@
+<div ng-controller="collapseDemoCtrl" style="padding-top: 40px;">
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedProfile = !isCollapsedProfile">
+        Employer Profile
+    </button>
+    <div uib-collapse="isCollapsedProfile" class="nav-menu-secondary-item" ng-click="editProfile();">
+        <div class="well well-lg">Edit Profile</div>
+    </div>
+    <div uib-collapse="isCollapsedProfile" class="nav-menu-secondary-item" ng-click="changePassword();">
+        <div class="well well-lg">Change Password</div>
+    </div>
+</div>
