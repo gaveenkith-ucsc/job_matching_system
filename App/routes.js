@@ -54,6 +54,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/changeseekerphoto', {
             templateUrl: 'App/Views/Pages/ChangeSeekerPhoto.html'
         })
+        .when('/viewqualification', {
+            templateUrl: 'App/Views/Pages/ViewQualifications.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
