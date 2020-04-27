@@ -45,7 +45,7 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
             templateUrl: 'App/Views/Pages/EditGuidanceProfile.html'
         })
         .when('/editadminprofile', {
-            templateUrl: 'App/Views/Pages/EditAdminProfile.html'
+            templateUrl: 'App/Views/Pages/ChangeAdminPassword.html'
         })
         .when('/changeguidancephoto', {
             controller: 'editGuidancePhotoController',
