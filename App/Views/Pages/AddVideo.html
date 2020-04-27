@@ -5,26 +5,33 @@
                 <navigation-menu-admin-directive></navigation-menu-admin-directive>
             </div>
             <div class="col-md-8">
-                <div class="edit-employer-profile-secondary-container" ng-controller="editAdminPasswordController">
+                <div class="edit-employer-profile-secondary-container" ng-controller="addVideoController">
                     <div class="title-container">
-                        <h3 class="title">Change Password</h3>
+                        <h3 class="title">Add New Video</h3>
                     </div>
                     <div class="form-container">
                         <div class="field-container form-group">
-                            <label for="cpassword">Current Password (*):</label>
-                            <input type="password" class="form-control" id="cpassword" ng-model="cpassword">
+                            <label for="vname">Video Name (*):</label>
+                            <input type="text" class="form-control" id="vname" ng-model="vname">
                         </div>
                         <div class="field-container form-group">
-                            <label for="npasssword">New Password (*):</label>
-                            <input type="password" class="form-control" id="npasssword" ng-model="npassword">
+                            <label for="link">You Tube Link (*):</label>
+                            <input type="text" class="form-control" id="link" ng-model="link">
                         </div>
-
+                        <div class="field-container form-group">
+                            <label for="link">Description (*):</label>
+                            <textarea class="form-control" id="description" ng-model="description"></textarea>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="author">Author (*):</label>
+                            <input type="text" class="form-control" id="author" ng-model="author">
+                        </div>
                         <div class="error-msg-container" ng-show="showerrormsg">
                             <span class="error-msg" style="color:red;">{{errormsg}}</span>
                         </div>
                         <div class="button-container"
                              style="text-align: center;padding-top: 15px;padding-bottom: 15px;">
-                            <button class="btn btn-success save-btn" ng-click="saveChanges();">Save Changes</button>
+                            <button class="btn btn-success save-btn" ng-click="saveVideo();">Save Video</button>
                         </div>
                     </div>
                 </div>
