@@ -32,6 +32,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/changeguidancepassword', {
             templateUrl: 'App/Views/Pages/ChangeGuidancePassword.html'
         })
+        .when('/changeseekerpassword', {
+            templateUrl: 'App/Views/Pages/ChangeSeekerPassword.html'
+        })
         .when('/editfreshseekerprofile', {
             templateUrl: 'App/Views/Pages/EditFreshSeekerProfile.html'
         })
@@ -47,6 +50,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/changeguidancephoto', {
             controller: 'editGuidancePhotoController',
             templateUrl: 'App/Views/Pages/ChangeGuidancePhoto.html'
+        })
+        .when('/changeseekerphoto', {
+            templateUrl: 'App/Views/Pages/ChangeSeekerPhoto.html'
         })
         .otherwise({
             redirectTo: '/'

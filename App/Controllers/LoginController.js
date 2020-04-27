@@ -93,7 +93,7 @@ app.controller('LoginController', function ($scope, $location, loginService, $ro
                         } else if ($scope.user_type == 'Job Seeker' && loginSessionService.user_type == 'seeker-graduate') {
                             $location.path("/editgraduateseekerprofile");
                         } else if ($scope.user_type == 'Job Seeker' && loginSessionService.user_type == 'seeker-fresh') {
-                            $location.path("/editfreshseekerprofile");
+                            $location.path("/editgraduateseekerprofile");
                         }
                         else {
                             $scope.message = "Credentials failed. Please try again.";
