@@ -35,8 +35,29 @@ app.service('videoGalleryService', function ($http) {
         });
     }
 
+    this.updateVideo = function (video_id,link,description,author) {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'video_id':video_id,
+                'link': link,
+                'description': description,
+                'author': author
+            },
+            url: 'App/Backend/User/updateVideoApi.php'
+        });
+    }
 
-
-
+    this.deleteVideo = function (video_id) {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'video_id':video_id
+            },
+            url: 'App/Backend/User/deleteVideoApi.php'
+        });
+    }
 
 });

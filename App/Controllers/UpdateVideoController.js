@@ -12,4 +12,17 @@ app.controller('updateVideoController', function ($scope, $location, loginSessio
     }
     $scope.loadData($scope.video_id);
 
+    $scope.updateVideo=function(){
+        videoGalleryService.updateVideo($scope.vid, $scope.link, $scope.description,$scope.author).then(function (obj) {
+           if(obj.data.records[0].status=='ok'){
+               alert("Video has been updated successfully.");
+               $location.path("/viewvideolist");
+           }
+           else{
+               alert("Something went wrong. Please try again.");
+               $location.path("/viewvideolist");
+           }
+        });
+    }
+
 });

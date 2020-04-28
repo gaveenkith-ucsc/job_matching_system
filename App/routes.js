@@ -66,6 +66,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/updatevideo', {
             templateUrl: 'App/Views/Pages/UpdateVideo.html'
         })
+        .when('/deletevideo', {
+            templateUrl: 'App/Views/Pages/DeleteVideo.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
