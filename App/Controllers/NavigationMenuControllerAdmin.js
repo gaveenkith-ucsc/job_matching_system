@@ -7,4 +7,8 @@ app.controller('collapseDemoCtrlAdmin', function ($scope, $location, loginSessio
     $scope.addVideo = function () {
         $location.path("/addvideo");
     }
+    $scope.viewVideoList = function () {
+        $location.path("/viewvideolist");
+    }
+
 });

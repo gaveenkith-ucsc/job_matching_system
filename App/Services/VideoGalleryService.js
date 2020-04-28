@@ -12,4 +12,16 @@ app.service('videoGalleryService', function ($http) {
             url: 'App/Backend/User/addVideoApi.php'
         });
     }
+
+    this.viewVideoList = function () {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+
+            },
+            url: 'App/Backend/User/viewVideoListApi.php'
+        });
+    }
+
 });

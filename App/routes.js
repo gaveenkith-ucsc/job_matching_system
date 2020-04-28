@@ -60,6 +60,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/addvideo', {
             templateUrl: 'App/Views/Pages/AddVideo.html'
         })
+        .when('/viewvideolist', {
+            templateUrl: 'App/Views/Pages/ViewVideoList.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
