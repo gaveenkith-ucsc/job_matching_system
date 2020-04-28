@@ -16,4 +16,11 @@
          ng-show="showqualification">
         <div class="well well-lg">Qualifications</div>
     </div>
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedVideo = !isCollapsedVideo">
+        Video Gallery
+    </button>
+    <div uib-collapse="isCollapsedVideo" class="nav-menu-secondary-item" ng-click="showVideo();">
+        <div class="well well-lg">View Video Gallery</div>
+    </div>
 </div>

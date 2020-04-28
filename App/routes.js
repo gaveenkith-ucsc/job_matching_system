@@ -57,6 +57,21 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/viewqualification', {
             templateUrl: 'App/Views/Pages/ViewQualifications.html'
         })
+        .when('/addvideo', {
+            templateUrl: 'App/Views/Pages/AddVideo.html'
+        })
+        .when('/viewvideolist', {
+            templateUrl: 'App/Views/Pages/ViewVideoList.html'
+        })
+        .when('/updatevideo', {
+            templateUrl: 'App/Views/Pages/UpdateVideo.html'
+        })
+        .when('/deletevideo', {
+            templateUrl: 'App/Views/Pages/DeleteVideo.html'
+        })
+        .when('/seekerviewvideolist', {
+            templateUrl: 'App/Views/Pages/SeekerViewVideoList.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
