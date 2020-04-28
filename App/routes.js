@@ -35,9 +35,6 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/changeseekerpassword', {
             templateUrl: 'App/Views/Pages/ChangeSeekerPassword.html'
         })
-        .when('/editfreshseekerprofile', {
-            templateUrl: 'App/Views/Pages/EditFreshSeekerProfile.html'
-        })
         .when('/editgraduateseekerprofile', {
             templateUrl: 'App/Views/Pages/EditGraduateSeekerProfile.html'
         })
@@ -71,6 +68,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         })
         .when('/seekerviewvideolist', {
             templateUrl: 'App/Views/Pages/SeekerViewVideoList.html'
+        })
+        .when('/seekerList', {
+            templateUrl: 'App/Views/Pages/ViewSeekers.html'
         })
         .otherwise({
             redirectTo: '/'
