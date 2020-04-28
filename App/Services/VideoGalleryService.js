@@ -24,4 +24,19 @@ app.service('videoGalleryService', function ($http) {
         });
     }
 
+    this.viewSingleVideo = function (video_id) {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'video_id':video_id
+            },
+            url: 'App/Backend/User/viewSingleVideoApi.php'
+        });
+    }
+
+
+
+
+
 });
