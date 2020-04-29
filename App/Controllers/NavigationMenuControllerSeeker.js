@@ -26,7 +26,7 @@ app.controller('collapseDemoCtrlSeeker', function ($scope, $location, loginSessi
         $location.path("/seekerviewvideolist");
     }
     $scope.showGuidance = function () {
-
+        $location.path("/guidanceList");
     }
 
 });
