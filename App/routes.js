@@ -72,6 +72,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/seekerList', {
             templateUrl: 'App/Views/Pages/ViewSeekers.html'
         })
+        .when('/seekerAcceptedList', {
+            templateUrl: 'App/Views/Pages/ViewSeekers-Accepted.html'
+        })
         .when('/responseSeeker', {
             templateUrl: 'App/Views/Pages/GuidanceResponseSeeker.html'
         })

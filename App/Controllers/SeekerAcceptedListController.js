@@ -1,7 +1,7 @@
-app.controller('seekerListController', function ($scope, $location, $routeParams, guideSeekerService, $routeParams) {
+app.controller('seekerAcceptedListController', function ($scope, $location, $routeParams, guideSeekerService, $routeParams) {
     $scope.seekers = [];
     $scope.viewSeekers = function () {
-        guideSeekerService.viewSeekers().then(function (obj) {
+        guideSeekerService.viewAcceptedSeekers().then(function (obj) {
             console.log(obj);
             $scope.seekers = obj.data.records;
             var i = 0;
@@ -14,7 +14,7 @@ app.controller('seekerListController', function ($scope, $location, $routeParams
         });
     }
     $scope.viewSeeker = function (nic_no) {
-        $location.path("/responseSeeker").search({nic_no: nic_no,type:'new'});
+        $location.path("/responseSeeker").search({nic_no: nic_no,type:'accepted'});
     }
     $scope.viewSeekers();
 });

@@ -15,5 +15,7 @@ app.controller('collapseDemoCtrlGuidance', function ($scope, $location) {
     $scope.viewNewJobSeekers = function () {
         $location.path("/seekerList");
     }
-
+    $scope.viewAcceptedJobSeekers = function () {
+        $location.path("/seekerAcceptedList");
+    }
 });

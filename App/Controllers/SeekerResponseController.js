@@ -1,7 +1,15 @@
 app.controller("seekerResponseController", function ($scope, loginSessionService, $location, seekerProfileService, $routeParams, guideSeekerService) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
+    $scope.viewqualifications = false;
+    $scope.showbutton = false;
     $scope.nic_no = $location.search().nic_no;
+    $scope.type = $location.search().type;
+    if ($scope.type == "new") {
+        $scope.showbutton = true;
+    } else {
+        $scope.showbutton = false;
+    }
     $scope.qualifications = [];
     $scope.loadData = function () {
         seekerProfileService.getSeekerDetails($scope.nic_no).then(function (obj) {
@@ -19,6 +27,11 @@ app.controller("seekerResponseController", function ($scope, loginSessionService
             $scope.status = obj.data.records[0].status;
             $scope.nicno = obj.data.records[0].nic_no;
             $scope.photo = "App/Backend/" + obj.data.records[0].photo;
+            if ($scope.status == 'Graduated') {
+                $scope.viewqualifications = true;
+            } else {
+                $scope.viewqualifications = false;
+            }
             seekerProfileService.getQualification($scope.nic_no).then(function (obj) {
                 $scope.qualifications = obj.data.records;
 
