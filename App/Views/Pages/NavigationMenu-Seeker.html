@@ -23,4 +23,11 @@
     <div uib-collapse="isCollapsedVideo" class="nav-menu-secondary-item" ng-click="showVideo();">
         <div class="well well-lg">View Video Gallery</div>
     </div>
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedGuidance = !isCollapsedGuidance">
+        Career Guidance
+    </button>
+    <div uib-collapse="isCollapsedGuidance" class="nav-menu-secondary-item" ng-click="showGuidance();">
+        <div class="well well-lg">Related Career Guidance Officers</div>
+    </div>
 </div>

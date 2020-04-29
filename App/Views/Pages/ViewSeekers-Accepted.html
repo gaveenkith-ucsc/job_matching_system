@@ -1,0 +1,37 @@
+<div class="edit-employer-profile">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4">
+                <navigation-menu-guidance-directive></navigation-menu-guidance-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="edit-employer-profile-secondary-container" ng-controller="seekerAcceptedListController">
+                    <div class="title-container">
+                        <h3 class="title">Accepted Job Seekers</h3>
+                    </div>
+                    <div class="form-container">
+                        <div class="video-item-container" ng-repeat="v in seekers"
+                             style="margin-top: 20px;margin-bottom: 20px;border:1px solid gray;text-align: center;">
+                            <div style="width:200px;height:200px;overflow: hidden;display:inline-block;"
+                                 class="photo-container">
+                                <img ng-src="{{v.profile_photo}}" id="cphoto"
+                                     style="width:100%;overflow:hidden;margin-top: 10px;margin-bottom: 10px;">
+                            </div>
+                            <div class="title-container"
+                                 style="background-color: lightgray;padding-top: 10px;padding-bottom: 10px;">
+                                <h4 class="title" style="text-align: center;">{{v.fname}}</h4>
+                                <h4 class="title" style="text-align: center;">{{v.status}}</h4>
+                            </div>
+                            <div class="button-container"
+                                 style="text-align: center;padding-top: 15px;padding-bottom: 15px;">
+                                <button class="btn btn-success view-btn" ng-click="viewSeeker(v.nic_no)">
+                                    View
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

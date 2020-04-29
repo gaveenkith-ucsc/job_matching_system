@@ -86,5 +86,15 @@ app.service('seekerProfileService', function ($http, loginSessionService) {
             url: 'App/Backend/User/viewQualificationsApi.php'
         });
     }
+    this.getQualification = function (nic_no) {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'nic_no': nic_no
+            },
+            url: 'App/Backend/User/viewQualificationsApi.php'
+        });
+    }
 
 });

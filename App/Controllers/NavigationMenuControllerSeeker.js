@@ -2,6 +2,7 @@ app.controller('collapseDemoCtrlSeeker', function ($scope, $location, loginSessi
     $scope.isCollapsedProfile = true;
     $scope.showqualification = false;
     $scope.isCollapsedVideo = true;
+    $scope.isCollapsedGuidance = true;
 
     if (loginSessionService.user_type == 'seeker-graduate') {
         $scope.showqualification = true;
@@ -23,6 +24,9 @@ app.controller('collapseDemoCtrlSeeker', function ($scope, $location, loginSessi
     }
     $scope.showVideo = function () {
         $location.path("/seekerviewvideolist");
+    }
+    $scope.showGuidance = function () {
+        $location.path("/guidanceList");
     }
 
 });
