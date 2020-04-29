@@ -2,6 +2,7 @@ app.controller('collapseDemoCtrlGuidance', function ($scope, $location) {
     $scope.isCollapsedProfile = true;
     $scope.isCollapsedSeekers = true;
 
+
     $scope.editProfile = function () {
         $location.path("/editguidanceprofile");
     }
@@ -18,4 +19,5 @@ app.controller('collapseDemoCtrlGuidance', function ($scope, $location) {
     $scope.viewAcceptedJobSeekers = function () {
         $location.path("/seekerAcceptedList");
     }
+
 });
