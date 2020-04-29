@@ -6,7 +6,7 @@ $user = json_decode(file_get_contents("php://input"));
 $nic_no = $user->nic_no;
 
 $conn = new mysqli("localhost", "root", "", "jobsmanagement");
-$result = $conn->query("select * from jobseeker where Nic_no='$nic_no'");
+$result = $conn->query("select fname,mname,lname,email,add1,add2,add3,mobileno,dob,Nic_no,status,gender,substring(profile_photo,4) as photo from jobseeker where Nic_no='$nic_no'");
 $outp = "";
 while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {
@@ -23,6 +23,7 @@ while ($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"dob":"' . $rs["dob"] . '",';
     $outp .= '"nic_no":"' . $rs["Nic_no"] . '",';
     $outp .= '"status":"' . $rs["status"] . '",';
+    $outp .= '"photo":"' . $rs["photo"] . '",';
     $outp .= '"gender":"' . $rs["gender"] . '"}';
 }
 $outp = '{"records":[' . $outp . ']}';

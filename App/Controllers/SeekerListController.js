@@ -1,4 +1,4 @@
-app.controller('seekerListController', function ($scope, $location, $routeParams, guideSeekerService) {
+app.controller('seekerListController', function ($scope, $location, $routeParams, guideSeekerService, $routeParams) {
     $scope.seekers = [];
     $scope.viewSeekers = function () {
         guideSeekerService.viewSeekers().then(function (obj) {
@@ -12,6 +12,9 @@ app.controller('seekerListController', function ($scope, $location, $routeParams
             }
             console.log($scope.seekers);
         });
+    }
+    $scope.viewSeeker = function (nic_no) {
+        $location.path("/responseSeeker").search({nic_no: nic_no});
     }
     $scope.viewSeekers();
 });

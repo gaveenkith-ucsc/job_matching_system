@@ -1,0 +1,102 @@
+<div class="edit-employer-profile">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4">
+                <navigation-menu-guidance-directive></navigation-menu-guidance-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="edit-employer-profile-secondary-container" ng-controller="seekerResponseController">
+                    <div class="title-container">
+                        <h3 class="title">Response Seekers</h3>
+                    </div>
+                    <div class="form-container">
+                        <div class="field-container form-group">
+                            <label for="nic-no">Profile Photo (*):</label>
+                            <div style="width:200px;height:200px;overflow: hidden;">
+                                <img ng-src="{{photo}}" id="cphoto" style="width:100%;overflow:hidden;">
+                            </div>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="nic-no">NIC No (*):</label>
+                            <input type="text" class="form-control" id="nic-no" ng-model="nicno" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="fname">First Name (*):</label>
+                            <input type="text" class="form-control" id="fname" ng-model="fname" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="mname">Middle Name (*):</label>
+                            <input type="text" class="form-control" id="mname" ng-model="mname" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="lname">Last Name (*):</label>
+                            <input type="text" class="form-control" id="lname" ng-model="lname" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="email">Email (*):</label>
+                            <input type="text" class="form-control" id="email" ng-model="email" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="add1">Address Line1 (*):</label>
+                            <input type="text" class="form-control" id="add1" ng-model="add1" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="add2">Address Line2 (*):</label>
+                            <input type="text" class="form-control" id="add2" ng-model="add2" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="add3">Address Line3 (*):</label>
+                            <input type="text" class="form-control" id="add3" ng-model="add3" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="mobileno">Mobile No (*):</label>
+                            <input type="text" class="form-control" id="mobileno" ng-model="mobileno" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="mobileno">Status (*):</label>
+                            <input type="text" class="form-control" id="status" ng-model="status" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="dob">Date of Birth (*):</label>
+                            <input type="text" class="form-control" id="dob" ng-model="dob" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="dob">Gender (*):</label>
+                            <input type="text" class="form-control" id="gender" ng-model="gender" readonly>
+                        </div>
+                        <div class="title-container" style="margin-top: 40px;">
+                            <h3 class="title">Qualifications</h3>
+                        </div>
+                        <div class="table-container">
+                            <table border="1" style="width:100%;">
+                                <thead>
+                                <th style="text-align: center;">Sector</th>
+                                <th style="text-align: center;">Type</th>
+                                <th style="text-align: center;">Institute</th>
+                                <th style="text-align: center;">Certificate No</th>
+                                <th style="text-align: center;">Completed Year</th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="q in qualifications">
+                                    <td style="text-align: center;">{{q.sector}}</td>
+                                    <td style="text-align: center;">{{q.type}}</td>
+                                    <td style="text-align: center;">{{q.institute}}</td>
+                                    <td style="text-align: center;">{{q.certificateno}}</td>
+                                    <td style="text-align: center;">{{q.completedyear}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="error-msg-container" ng-show="showerrormsg">
+                            <span class="error-msg" style="color:red;">{{errormsg}}</span>
+                        </div>
+                        <div class="button-container" style="margin-top: 20px;margin-bottom: 20px;text-align: center;">
+                            <button class="btn btn-success response-btn" ng-click="addResponse();">Accept Seeker</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
