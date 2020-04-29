@@ -14,7 +14,7 @@ app.controller('guidanceListController', function ($scope, $location, $routePara
         });
     }
     $scope.viewGuidance = function (nic_no) {
-
+        $location.path("/viewGuidanceOfficer").search({nic_no: nic_no});
     }
     $scope.viewGuidances();
 });

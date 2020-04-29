@@ -81,6 +81,9 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/responseSeeker', {
             templateUrl: 'App/Views/Pages/GuidanceResponseSeeker.html'
         })
+        .when('/viewGuidanceOfficer', {
+            templateUrl: 'App/Views/Pages/ViewGuidanceOfficer.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
