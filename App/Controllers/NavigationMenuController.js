@@ -1,5 +1,6 @@
 app.controller('collapseDemoCtrl', function ($scope, $location) {
     $scope.isCollapsedProfile = true;
+    $scope.isCollapsedVacancy = true;
 
     $scope.editProfile = function () {
         $location.path("/editemployerprofile");
@@ -7,6 +8,9 @@ app.controller('collapseDemoCtrl', function ($scope, $location) {
 
     $scope.changePassword = function () {
         $location.path("/changeemployerpassword");
+    }
+    $scope.addVacancy = function () {
+        $location.path("/addVacancy");
     }
 
 });
