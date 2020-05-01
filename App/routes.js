@@ -84,6 +84,27 @@ app.config(function ($routeProvider, $locationProvider, $httpProvider) {
         .when('/viewGuidanceOfficer', {
             templateUrl: 'App/Views/Pages/ViewGuidanceOfficer.html'
         })
+        .when('/addVacancy', {
+            templateUrl: 'App/Views/Pages/AddNewVacancy.html'
+        })
+        .when('/postedVacancy', {
+            templateUrl: 'App/Views/Pages/ViewPostedVacancies.html'
+        })
+        .when('/viewVacancy', {
+            templateUrl: 'App/Views/Pages/ViewVacancy.html'
+        })
+        .when('/vieweligibleseekers', {
+            templateUrl: 'App/Views/Pages/ViewEligibleSeekers.html'
+        })
+        .when('/viewappliedvacancies', {
+            templateUrl: 'App/Views/Pages/ViewAppliedVacancies.html'
+        })
+        .when('/viewseekervacancy', {
+            templateUrl: 'App/Views/Pages/ViewSeekerVacancy.html'
+        })
+        .when('/viewempprofile', {
+            templateUrl: 'App/Views/Pages/ViewSeekerEmployer.html'
+        })
         .otherwise({
             redirectTo: '/'
         });

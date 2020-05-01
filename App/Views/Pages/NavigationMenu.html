@@ -9,4 +9,14 @@
     <div uib-collapse="isCollapsedProfile" class="nav-menu-secondary-item" ng-click="changePassword();">
         <div class="well well-lg">Change Password</div>
     </div>
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedVacancy = !isCollapsedVacancy">
+        Vacancies
+    </button>
+    <div uib-collapse="isCollapsedVacancy" class="nav-menu-secondary-item" ng-click="addVacancy();">
+        <div class="well well-lg">Add New Vacancy</div>
+    </div>
+    <div uib-collapse="isCollapsedVacancy" class="nav-menu-secondary-item" ng-click="viewPostedVacancy();">
+        <div class="well well-lg">Posted Vacancies</div>
+    </div>
 </div>
