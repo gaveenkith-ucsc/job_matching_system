@@ -1,0 +1,51 @@
+<div class="edit-employer-profile">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4">
+                <navigation-menu-seeker-directive></navigation-menu-seeker-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="edit-employer-profile-secondary-container" ng-controller="appliedVacanciesController">
+                    <div class="title-container">
+                        <h3 class="title">Your details have been sent to following vacancies</h3>
+                    </div>
+                    <div class="form-container">
+                        <table border="1" style="border-collapse:collapse;width: 100%;">
+                            <thead>
+                            <th>Vacancy Id</th>
+                            <th>Title</th>
+
+                            <th>Added Date</th>
+                            <th>Expiration Date</th>
+                            <th>Employer</th>
+                            <th></th>
+                            <th></th>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="v in vacancies">
+                                <td>{{v.vacancy_id}}</td>
+                                <td>{{v.title}}</td>
+                                <td>{{v.added_date}}</td>
+                                <td>{{v.expiration_date}}</td>
+                                <td>{{v.oname}}</td>
+                                <td style="text-align:center;padding-top: 2px;padding-bottom: 2px;">
+                                    <button class="btn btn-success" ng-click="viewEmployer(v.oid)">
+                                        View Employer
+                                    </button>
+                                </td>
+                                <td style="text-align:center;padding-top: 2px;padding-bottom: 2px;">
+                                    <button class="btn btn-success" ng-click="viewVacancy(v.vacancy_id)">View Vacancy
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

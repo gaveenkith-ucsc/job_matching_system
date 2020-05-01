@@ -45,5 +45,15 @@ app.service('vacancyService', function ($http, loginSessionService) {
             url: 'App/Backend/User/viewEligibleListApi.php'
         });
     }
+    this.viewAppliedVacancies = function () {
+        return $http({
+            method: 'POST',
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            data: {
+                'seeker_id': loginSessionService.user_index
+            },
+            url: 'App/Backend/User/viewAppliedVacancyApi.php'
+        });
+    }
 
 });

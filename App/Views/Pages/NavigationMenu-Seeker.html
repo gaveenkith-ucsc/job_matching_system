@@ -30,4 +30,11 @@
     <div uib-collapse="isCollapsedGuidance" class="nav-menu-secondary-item" ng-click="showGuidance();">
         <div class="well well-lg">Related Career Guidance Officers</div>
     </div>
+    <button type="button" class="btn btn-default nav-menu-primary-item"
+            ng-click="isCollapsedVacancy = !isCollapsedVacancy" ng-show="showvacancy">
+        Vacancies
+    </button>
+    <div uib-collapse="isCollapsedVacancy" class="nav-menu-secondary-item" ng-click="viewVacancy();">
+        <div class="well well-lg">View Applied Vacancy</div>
+    </div>
 </div>

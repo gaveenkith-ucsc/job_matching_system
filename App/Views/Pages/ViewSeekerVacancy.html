@@ -1,0 +1,52 @@
+<div class="edit-employer-profile">
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-md-4">
+                <navigation-menu-seeker-directive></navigation-menu-seeker-directive>
+            </div>
+            <div class="col-md-8">
+                <div class="edit-employer-profile-secondary-container" ng-controller="viewVacancyController">
+                    <div class="title-container">
+                        <h3 class="title">View Vacancy</h3>
+                    </div>
+                    <div class="form-container">
+                        <div class="field-container form-group">
+                            <label for="title">Vacancy No:</label>
+                            <input type="text" class="form-control" id="vacancy_no" ng-model="vacancyno" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="title">Vacancy Title:</label>
+                            <input type="text" class="form-control" id="title" ng-model="title" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="category">Sector:</label>
+                            <input type="text" class="form-control" id="category" ng-model="sector" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="qtype">Qualification Type:</label>
+                            <input type="text" class="form-control" id="qtype" ng-model="qtype" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="job_profile">Job Profile:</label>
+                            <textarea class="form-control" id="job_profile" ng-model="jobprofile"
+                                      style="height:150px;" readonly></textarea>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="candidate_profile">Candidate Profile:</label>
+                            <textarea class="form-control" id="candidate_profile"
+                                      ng-model="candidateprofile" style="height:150px;" readonly></textarea>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="expdate">Expiration Date:</label>
+                            <input type="text" class="form-control" id="expdate" ng-model="expdate" readonly>
+                        </div>
+                        <div class="field-container form-group">
+                            <label for="addeddate">Expiration Date:</label>
+                            <input type="text" class="form-control" id="addeddate" ng-model="addeddate" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
