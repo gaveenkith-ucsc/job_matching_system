@@ -12,5 +12,7 @@ app.controller('collapseDemoCtrl', function ($scope, $location) {
     $scope.addVacancy = function () {
         $location.path("/addVacancy");
     }
-
+    $scope.viewPostedVacancy = function () {
+        $location.path("/postedVacancy");
+    }
 });

@@ -5,10 +5,13 @@ app.controller("seekerResponseController", function ($scope, loginSessionService
     $scope.showbutton = false;
     $scope.nic_no = $location.search().nic_no;
     $scope.type = $location.search().type;
+    $scope.header = "";
     if ($scope.type == "new") {
         $scope.showbutton = true;
+        $scope.header = "Response Seekers";
     } else {
         $scope.showbutton = false;
+        $scope.header = "View Seekers";
     }
     $scope.qualifications = [];
     $scope.loadData = function () {
