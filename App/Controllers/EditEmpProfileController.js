@@ -1,7 +1,7 @@
-app.controller("editEmpProfileController", function ($scope, employerProfileService, loginSessionService, $location) {
+app.controller("editEmpProfileController", function ($scope, employerProfileService, loginSessionService, $location, $rootScope) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
-
+    $rootScope.set();
     $scope.loadData = function () {
         employerProfileService.getEmployerDetails(loginSessionService.user_index).then(function (obj) {
             console.log(loginSessionService.user_index);

@@ -10,5 +10,11 @@ app.service('loginSessionService', function () {
         this.user_index = user_index;
         this.user_status = user_status;
     }
+    this.clearSession = function () {
+        this.username = "";
+        this.user_type = "";
+        this.user_index = "";
+        this.user_status = "";
+    }
 
 });

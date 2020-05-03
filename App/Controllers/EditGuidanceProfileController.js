@@ -1,6 +1,7 @@
-app.controller("editGuidanceProfileController", function ($scope, loginSessionService, $location, guidanceProfileService) {
+app.controller("editGuidanceProfileController", function ($scope, loginSessionService, $location, guidanceProfileService, $rootScope) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
+    $rootScope.set();
     $scope.loadData = function () {
         guidanceProfileService.getGuidanceDetails(loginSessionService.user_index).then(function (obj) {
             $scope.fname = obj.data.records[0].fname;

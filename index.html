@@ -70,6 +70,7 @@
     <script type="text/javascript" src="App/Controllers/EligibleListController.js"></script>
     <script type="text/javascript" src="App/Controllers/AppliedVacanciesController.js"></script>
     <script type="text/javascript" src="App/Controllers/ViewEmpProfileController.js"></script>
+    <script type="text/javascript" src="App/Controllers/HeaderController.js"></script>
     <!-- end-->
     <!-- services -->
     <script type="text/javascript" src="App/Services/LoginService.js"></script>
@@ -93,7 +94,14 @@
     <!-- end -->
 </head>
 <body>
-<div class="header"></div>
+<div class="header clearfix"
+     style="background-color: gray;color: black;padding-top: 20px;padding-bottom: 20px;padding-right: 20px;"
+     ng-controller="headerController">
+    <span style="float:right;display:inline-block;cursor:pointer;" ng-show="showlogout"
+          ng-click="logout();">Log out</span>
+    <span style="float:right;display:inline-block;margin-right: 20px;" ng-show="showusername">Logged as:{{username}} ({{usertype}})</span>
+
+</div>
 <div ng-view></div>
 <div class="footer">
     <h3 class="footer-text">TVET Job Management System</h3>
