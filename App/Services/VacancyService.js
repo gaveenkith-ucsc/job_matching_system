@@ -55,5 +55,5 @@ app.service('vacancyService', function ($http, loginSessionService) {
             url: 'App/Backend/User/viewAppliedVacancyApi.php'
         });
     }
-
+//notification service is implemented in backend.
 });

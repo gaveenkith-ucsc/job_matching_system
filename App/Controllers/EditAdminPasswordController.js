@@ -1,8 +1,9 @@
-app.controller('editAdminPasswordController', function ($scope, $location, loginSessionService, adminProfileService) {
+app.controller('editAdminPasswordController', function ($scope, $location, loginSessionService, adminProfileService, $rootScope) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
     $scope.cpassword = "";
     $scope.npassword = "";
+    $rootScope.set();
     $scope.saveChanges = function () {
         if ($scope.cpassword.length == 0 || $scope.npassword.length == 0) {
             $scope.showerrormsg = true;

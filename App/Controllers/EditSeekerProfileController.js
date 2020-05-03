@@ -1,7 +1,7 @@
-app.controller("editSeekerProfileController", function ($scope, loginSessionService, $location, seekerProfileService) {
+app.controller("editSeekerProfileController", function ($scope, loginSessionService, $location, seekerProfileService, $rootScope) {
     $scope.showerrormsg = false;
     $scope.errormsg = "";
-
+    $rootScope.set();
     $scope.loadData = function () {
         seekerProfileService.getSeekerDetails(loginSessionService.user_index).then(function (obj) {
             $scope.fname = obj.data.records[0].fname;
